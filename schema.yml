@@ -1,0 +1,26 @@
+title: "VCN作成"
+description: "リソースマネージャーを使用したVCN作成検証"
+informationalText: "VCN example"
+schemaVersion: 1.0.0
+version: "20250416"
+
+locale: "ja"
+groupings:
+  - title: "デプロイ時の設定"
+    variables:
+    - vcn_display_name
+    - region
+
+variables:
+  vcn_display_name:
+    type: string
+    title: "VCN名"
+    default: "vcn-01"
+    pattern: "^[a-zA-Z][a-zA-Z0-9]+$"
+    required: true
+  region:
+    type: oci:identity:region:name
+    title: "デプロイ先リージョン"
+    default: "ap-tokyo-1"
+    visible: true
+    required: true
